@@ -24,8 +24,6 @@ export default class Game extends React.Component<{}, IGameState>{
       stepNumber: 0,
       xIsNext: true,
     }
-    // bind parent state to "this" in click handler
-    // this.handleClick.bind(this);
   }
 
   public render() {
@@ -77,16 +75,7 @@ export default class Game extends React.Component<{}, IGameState>{
     );
   }
 
-  private handleClick (i: number) {
-  // private handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(this.props);
-    console.log(this.state);
-    console.log(i);
-
-    // this.setState({});
-    
-    // TODO - what is this in this context?
-    /*
+  private handleClick = (i: number) => {
     // If prevState is used to inform next state then must send setState a function with appropriate logic.
     this.setState((prevState, props) => {
       // Create copy of the squares state, set selected value to X, then override state
@@ -110,7 +99,6 @@ export default class Game extends React.Component<{}, IGameState>{
         xIsNext: !prevState.xIsNext
       }
     });
-    */
   }
 
   // Allow user to go back in time to previous game state.
